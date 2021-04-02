@@ -7,7 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #00aeef;
+  --ifm-color-primary: #999999;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -17,7 +17,7 @@
   --ifm-code-font-size: 95%;
 }
 
-:root html[data-theme='dark'] {
+/* :root html[data-theme='dark'] {
   --ifm-color-primary: rgb(0, 71, 97);
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -26,7 +26,7 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
-}
+} */
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -35,18 +35,28 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+.container {
+  background: #ffffff;
+  color: #4d4d4d;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 /* Sidebar root folders */
 .menu {
-  background-color: #f7fafc;
+  background-color: #4d4d4d;
 }
+
 .menu__list .menu__list {
-  margin-left: var(--ifm-menu-link-padding-horizontal);
-  border-left: 1px solid #dfdfdf;
-  margin-left: 1.3em;
+  font-size: 1rem;
+  /* margin-left: var(--ifm-menu-link-padding-horizontal);
+  margin-left: 1.3em; */
+  /* font-weight: 100; */
+  /* margin: 0 0 0 15px; */
 }
-html[data-theme='dark'] .menu__list .menu__list {
+/* html[data-theme='dark'] .menu__list .menu__list {
   border-left: 1px solid #202020;
-}
+} */
 a.menu__link.menu__link {
   display: flex;
   flex-direction: row;
@@ -58,38 +68,49 @@ a.menu__link.menu__link--sublist {
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
+  margin: 0 0 0 15px;
 }
 .menu > ul > li > a.menu__link.menu__link--sublist {
-  font-weight: 700;
   padding-right: 0.6em;
+  border-top: 1px solid #707070;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 21px;
+  line-height: 1.52381;
+  color: #ffffff !important;
 }
-html[data-theme='dark'] .menu > ul > li > a.menu__link.menu__link--sublist {
+/* html[data-theme='dark'] .menu > ul > li > a.menu__link.menu__link--sublist {
   color: #e6e6e6;
-}
+} */
 .menu .menu__link--sublist:after {
+  background: none;
   background-size: 1.5rem 1.5rem;
   height: 0.6em;
 }
-a.menu__link:not(.menu__link--sublist) {
+/* a.menu__link:not(.menu__link--sublist) {
   margin-left: 1.5em;
+} */
+
+/* .menu__link:not(.menu__link--active) {
+  color: #ffffff;
+} */
+.menu__link--active {
+  color: #ffffff;
 }
-.menu__link:not(.menu__link--active) {
-  color: #222;
-}
-html[data-theme='dark'] .menu__link:not(.menu__link--active) {
-  color: #888;
-}
+
+/* html[data-theme='dark'] .menu__link:not(.menu__link--active) {
+  color: #e6e6e6;
+} */
 .menu__link {
   /* text-transform: capitalize; */
   justify-content: flex-end;
   flex-direction: row-reverse;
 }
 .menu__link + .menu__list .menu__link {
-  font-weight: 400;
+  font-weight: 600;
   line-height: 0.8;
   font-size: 0.9em;
   padding: 0.4em 0.6em;
-  /* color: #596069; */
 }
 .menu__list .menu__list .menu__list-item {
   margin-bottom: 0.25rem;
@@ -166,8 +187,15 @@ html[data-theme='dark'] h6 {
   color: #f0f0f0;
 }
 
+article {
+  padding: 150px;
+}
+
 h1 {
-  font-size: 2em;
+  font-size: 63px;
+  text-align: center;
+  line-height: 1.14286;
+  letter-spacing: -1.5px;
 }
 h2 {
   font-size: 1.75em;
@@ -212,23 +240,23 @@ bigtable table {
 table thead {
   background: #f9f9f9;
 }
-html[data-theme='dark'] table thead {
+/* html[data-theme='dark'] table thead {
   background: #080808;
-}
+} */
 table th,
 table td {
   padding: 0.5em;
 }
-html[data-theme='dark'] table th,
+/* html[data-theme='dark'] table th,
 html[data-theme='dark'] table td {
   border-color: #222;
-}
+} */
 table tr:nth-child(2n) {
   background-color: #f9f9f9;
 }
-html[data-theme='dark'] table tr:nth-child(2n) {
+/* html[data-theme='dark'] table tr:nth-child(2n) {
   background-color: #080808;
-}
+} */
 code {
   background: #f6f8f9;
   background: hsla(200, 20%, 95%, 1);
@@ -239,13 +267,25 @@ code {
   padding: 0.16em 0.45em;
   border-radius: 0.3em;
 }
-html[data-theme='dark'] code {
+/* html[data-theme='dark'] code {
   background: #040606;
   background: hsla(200, 20%, 5%, 1);
+} */
+
+.navbar {
+  margin: 97px auto 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  height: 5.5rem;
+  line-height: 1;
+  margin: auto;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
 }
 
-html[data-theme='dark'] .navbar {
-  background: #121212;
+* {
+  box-sizing: border-box;
 }
 
 ::-moz-selection {
@@ -297,6 +337,10 @@ button {
     height: 100vh;
     width: 100vw;
   }
+}
+
+.footer {
+  background-color: #333333;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
