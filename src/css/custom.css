@@ -7,7 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #999999;
+  --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
   --ifm-color-primary-darkest: rgb(26, 136, 112);
@@ -15,18 +15,31 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+
+  --ifm-background-color: #f5f5f5 !important;
+
+  --doc-sidebar-width: 250px !important;
+  /* --collapse-button-bg-color-dark: #404040 !important; */
+  --ifm-menu-color: #999999 !important;
+  --ifm-menu-bg-color: #404040 !important;
+  --ifm-menu-color-background-hover: #404040 !important;
+  --ifm-menu-color-active: #ffffff;
+  /* --ifm-menu-link-sublist-icon: #ffffff; */
+
+  --ifm-heading-color: #333333;
+
+  /* footer */
+  --ifm-footer-background-color: #333333 !important;
 }
 
-/* :root html[data-theme='dark'] {
-  --ifm-color-primary: rgb(0, 71, 97);
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
-} */
+html[data-theme='dark'] {
+  --ifm-heading-color: #fff;
+  --ifm-background-color: #18191a !important;
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #333333 !important;
+}
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -35,312 +48,43 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-.container {
-  background: #ffffff;
-  color: #4d4d4d;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-/* Sidebar root folders */
-.menu {
-  background-color: #4d4d4d;
-}
-
-.menu__list .menu__list {
-  font-size: 1rem;
-  /* margin-left: var(--ifm-menu-link-padding-horizontal);
-  margin-left: 1.3em; */
-  /* font-weight: 100; */
-  /* margin: 0 0 0 15px; */
-}
-/* html[data-theme='dark'] .menu__list .menu__list {
-  border-left: 1px solid #202020;
-} */
-a.menu__link.menu__link {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
-a.menu__link.menu__link--sublist {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 0 0 0 15px;
-}
-.menu > ul > li > a.menu__link.menu__link--sublist {
-  padding-right: 0.6em;
-  border-top: 1px solid #707070;
-  margin-bottom: 6px;
-  display: block;
-  font-size: 21px;
-  line-height: 1.52381;
-  color: #ffffff !important;
-}
-/* html[data-theme='dark'] .menu > ul > li > a.menu__link.menu__link--sublist {
-  color: #e6e6e6;
-} */
-.menu .menu__link--sublist:after {
-  background: none;
-  background-size: 1.5rem 1.5rem;
-  height: 0.6em;
-}
-/* a.menu__link:not(.menu__link--sublist) {
-  margin-left: 1.5em;
-} */
-
-/* .menu__link:not(.menu__link--active) {
-  color: #ffffff;
-} */
-.menu__link--active {
-  color: #ffffff;
-}
-
-/* html[data-theme='dark'] .menu__link:not(.menu__link--active) {
-  color: #e6e6e6;
-} */
-.menu__link {
-  /* text-transform: capitalize; */
-  justify-content: flex-end;
-  flex-direction: row-reverse;
-}
-.menu__link + .menu__list .menu__link {
-  font-weight: 600;
-  line-height: 0.8;
-  font-size: 0.9em;
-  padding: 0.4em 0.6em;
-}
-.menu__list .menu__list .menu__list-item {
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-  margin-left: 0.35rem;
-}
-
-/* Too Deep with many long SQL query reports */
-a.menu__link.menu__link.menu__link[href*='/sql-reports/'],
-a.menu__link.menu__link.menu__link[href*='/sql-tables/'] {
-  font-size: 0.8em;
-  line-height: 0.9;
-  padding: 0.3em 0.2em;
-  margin-left: 0.5em;
-}
-
-/* FAQ paths need full question titles, so we make them smaller. */
-a.menu__link.menu__link.menu__link[href^='/faq/'] {
-  line-height: 1.1;
-  font-size: 0.75rem;
-  margin-top: -0.125rem;
-  margin-left: 0em;
-  margin-right: 0em;
-  padding: 0.3em 0.3em;
-}
-
-.btn {
-  margin-right: 10px;
-  display: inline-flex;
-  -webkit-box-align: center;
-  align-items: center;
-  height: 36px;
-  box-sizing: border-box;
-  opacity: 1;
-  text-transform: uppercase;
-  line-height: 1;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  white-space: nowrap;
-  word-break: keep-all;
-  overflow-x: auto;
-  margin-bottom: 0.5rem;
-  color: #fff !important;
-  padding: 8px 13px;
-  border: none;
-  text-decoration: none;
-  outline: none;
-  border-radius: 6px;
-  background-color: #607d8b;
-  background-color: #333333;
-}
-
-.main {
-  background: white;
-}
-html[data-theme='dark']
-
-
-/* John's Styles */
-html {
-  background: #f7fafc;
-}
-html[data-theme='dark'] {
-  background: #0a0a0a;
-  color: hsl(210, 9%, 70%);
-}
-html[data-theme='dark'] h1,
-html[data-theme='dark'] h2,
-html[data-theme='dark'] h3,
-html[data-theme='dark'] h4,
-html[data-theme='dark'] h5,
-html[data-theme='dark'] h6 {
-  color: #f0f0f0;
-}
-
-article {
-  padding: 150px;
-}
-
-h1 {
-  font-size: 63px;
-  text-align: center;
-  line-height: 1.14286;
-  letter-spacing: -1.5px;
-}
-h2 {
-  font-size: 1.75em;
-}
-h3 {
-  font-size: 1.5em;
-}
-h4 {
-  font-size: 1.25em;
-}
-h5 {
-  font-size: 1.15em;
-}
-h6 {
-  font-size: 1em;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  padding-top: 1em;
-}
-
-td {
-  padding: 0.45em 0.5em;
-}
 table {
-  text-align: left;
-  font-size: 0.8em;
-  margin-top: 4em;
-}
-bigtable table {
-  font-size: 0.75em;
-  width: calc(100% + 13em);
-  margin-left: -6.5em;
-  /* margin-right: -6.5em; */
-}
-table thead {
-  background: #f9f9f9;
-}
-/* html[data-theme='dark'] table thead {
-  background: #080808;
-} */
-table th,
-table td {
-  padding: 0.5em;
-}
-/* html[data-theme='dark'] table th,
-html[data-theme='dark'] table td {
-  border-color: #222;
-} */
-table tr:nth-child(2n) {
-  background-color: #f9f9f9;
-}
-/* html[data-theme='dark'] table tr:nth-child(2n) {
-  background-color: #080808;
-} */
-code {
-  background: #f6f8f9;
-  background: hsla(200, 20%, 95%, 1);
-  /* border-radius: .3em; */
-  color: hsla(199, 18%, 35%, 1);
-  font-family: monospace, monospace;
-  font-size: 0.9em;
-  padding: 0.16em 0.45em;
-  border-radius: 0.3em;
-}
-/* html[data-theme='dark'] code {
-  background: #040606;
-  background: hsla(200, 20%, 5%, 1);
-} */
-
-.navbar {
-  margin: 97px auto 0 auto;
-  background-color: #ffffff;
-  display: flex;
-  height: 5.5rem;
-  line-height: 1;
-  margin: auto;
-  text-align: center;
-  text-transform: capitalize;
-  transition: all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+  width: 100%;
 }
 
-* {
-  box-sizing: border-box;
+.markdown li > p {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-::-moz-selection {
-  background-color: rgba(91, 48, 156, 0.9) !important;
-  color: white !important;
+/* Sidebar style */
+[class^='docSidebarContainer'] {
+  background: var(--ifm-menu-bg-color);
 }
-::selection {
-  background-color: rgba(91, 48, 156, 0.9) !important;
-  color: white !important;
+.menu {
+  padding: 0 !important;
 }
-
-button {
-  cursor: pointer;
+.menu > .menu__list > .menu__list-item {
+  border-bottom: 1px solid #707070;
+  padding: 15px 0;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
-*:focus {
-  outline-color: #2684ff;
-}
-
-.iframe_page {
-  height: 100vh;
-  width: calc(100vw - 340px);
-  border-top: none;
-  border-right: none;
-  border-bottom: none;
-  border-left: 1px solid rgb(236, 236, 236);
-  border-image: initial;
-  outline: none;
-  left: 340px;
-  top: 0px;
-  position: fixed;
-  background: rgb(255, 255, 255);
-  z-index: 1;
-  transform-origin: left top;
-}
-.iframe_page--zoom90 {
-  transform: scale(0.9);
-  height: calc(100vh / 0.9);
-  width: calc(100vw / 0.9 - 340px / 0.9);
+.menu > .menu__list > .menu__list-item > a {
+  margin-bottom: 7px;
 }
 
-@media (max-width: 996px) {
-  .iframe_page {
-    height: 100vh;
-    width: 100vw;
-    left: 0;
-  }
-  .iframe_page--zoom90 {
-    transform: scale(1);
-    height: 100vh;
-    width: 100vw;
-  }
+.menu > .menu__list > .menu__list-item a:hover {
+  color: #ccc;
 }
 
-.footer {
-  background-color: #333333;
+.menu .menu__list .menu__list > .menu__list-item .menu__link {
+  font-size: 16px;
 }
+/* END Sidebar style */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+/* Main block */
+main {
+  /* background: #f5f5f5; */
+  background: var(--ifm-background-color);
+}
