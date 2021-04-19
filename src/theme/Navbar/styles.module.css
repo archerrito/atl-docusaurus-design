@@ -1,0 +1,67 @@
+
+@media screen and (max-width: 997px) {
+.displayOnlyInLargeViewport {
+    display: none !important;
+}
+}
+
+.navbarHideable {
+transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+transform: translate3d(0, calc(var(--ifm-navbar-height) * -1), 0);
+}
+
+.emailBox {
+    position: relative;
+    display: flex;
+}
+.emailBoxInput {
+    background: transparent;
+    border: 2px solid #333333;
+    border-radius: 30px;
+    color: #333333;
+    font-size: 12px;
+    height: 36px;
+    line-height: 1;
+    padding: 0 40px 0 25px;
+    transition: border-color .125s ease-in-out;
+    width: 250px;
+    outline: none;
+}
+
+.emailBoxIcon {
+    position: absolute;
+    display: block;
+    right: 7px;
+    top: -4px;
+    opacity: .4;
+    padding: 0;
+    border-radius: 100%;
+    width: 27px;
+    height: 27px;
+    border: none;
+    z-index: 10;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all .3s linear;
+    outline: none;
+    background: transparent;
+}
+.emailBoxIcon svg {
+    width: 27px;
+}
+.emailBoxIcon:focus,
+.emailBoxIcon:active,
+.emailBoxInput:focus + .emailBoxIcon {
+    visibility: visible;
+}
+
+/*
+ * Valid form style
+ */
+.emailBoxValid .emailBoxIcon {
+    opacity: 1;
+    visibility: visible;
+}
