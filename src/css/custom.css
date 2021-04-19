@@ -7,13 +7,13 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #58ade3;
+  --ifm-color-primary-dark: #3da0de;
+  --ifm-color-primary-darker: #3099dc;
+  --ifm-color-primary-darkest: #2080bd;
+  --ifm-color-primary-light: #73bae8;
+  --ifm-color-primary-lighter: #80c1ea;
+  --ifm-color-primary-lightest: #a9d5f1;
   --ifm-code-font-size: 95%;
 
   --ifm-background-color: #f5f5f5 !important;
@@ -57,9 +57,18 @@ table {
   margin-bottom: 0px;
 }
 
+nav.navbar {
+  width: calc(100% - var(--doc-sidebar-width));
+  left: var(--doc-sidebar-width);
+}
+
 /* Sidebar style */
-[class^='docSidebarContainer'] {
+[class*='docSidebarContainer'] {
   background: var(--ifm-menu-bg-color);
+}
+[class*='docSidebarContainer'] .menu__link--sublist:after {
+  content: '';
+  display: none;
 }
 .menu {
   padding: 0 !important;
@@ -87,4 +96,43 @@ table {
 main {
   /* background: #f5f5f5; */
   background: var(--ifm-background-color);
+}
+
+.main-wrapper [class*='docMainContainer_'] > .container > .row {
+  justify-content: center;
+}
+
+.main-wrapper [class*='docMainContainer_'] > .container > .row .col {
+  display: none !important;
+}
+.main-wrapper
+  [class*='docMainContainer_']
+  > .container
+  > .row
+  .col[class*='docItemCol_'] {
+  display: block !important;
+}
+/* END Main block */
+
+/* Search box */
+button.DocSearch {
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+button.DocSearch .DocSearch-Search-Icon {
+  height: 25px !important;
+  width: 25px !important;
+  stroke-width: 3;
+}
+button.DocSearch .DocSearch-Button-Keys,
+button.DocSearch .DocSearch-Button-Placeholder {
+  display: none;
+}
+
+button.DocSearch-Button:active,
+button.DocSearch-Button:focus,
+button.DocSearch-Button:hover {
+  box-shadow: none !important;
+  transform: scale(1.1);
 }

@@ -8,6 +8,10 @@ module.exports = {
   organizationName: 'your-org', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true,
+    },
    algolia: {
      apiKey: 'd081a1783dc1fceab58ce7cb1ad284eb',
      indexName: 'getwisdom_developers',
@@ -20,14 +24,6 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [],
-    },
-    colorMode: {
-      // "light" | "dark"
-      defaultMode: 'light',
-
-      // Hides the switch in the navbar
-      // Useful if you want to support a single color mode
-      disableSwitch: false,
     },
     footer: {
       style: 'dark',
